@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Project.Site1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript" src='style/jquery-1.11.1.min.js'></script>
+    <script type="text/javascript" src='style/js/bootstrap.min.js'></script>
+    <link href="style/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <style runat='server' type="text/css">
+        body
+        {
+            margin:0;
+        }
+        .img
+        {
+            width:100px;
+            height:100px;
+        }
+        div
+        {
+            margin:0 auto;
+            width:1300px;
+        }
+        .header
+        {
+            height:200px;
+            background:url("assets/header.jpg");
+            background-repeat: no-repeat;
+            -moz-background-size:cover;
+        }
+        .footer
+        {
+            text-align:center;
+        }
+        .content
+        {
+            text-align:left;
+        }
+        
+        .menu
+        {
+            text-align:justify;
+        }
+        
+        .info
+        {
+            text-align:right;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="header">
+    </div>
+    <ul class="nav nav-tabs">
+      <li role="presentation"><asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="Default.aspx">Home</asp:HyperLink></li>
+      <li role="presentation"><asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="Register.aspx">Register</asp:HyperLink></li>
+      <li role="presentation"><asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="Login.aspx">Login</asp:HyperLink></li>
+      <li role="presentation"><asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="Insert.aspx">Insert</asp:HyperLink></li>
+      <li role="presentation"><asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl="Plane.aspx">Plane</asp:HyperLink></li>
+      <li role="presentation"><asp:HyperLink ID="HyperLink12" runat="server" NavigateUrl="Comment.aspx">Comment</asp:HyperLink></li>
+    </ul>
+    <div>
+        <div class="alert alert-info" role="alert">
+        <span class="glyphicon glyphicon-user"></span>
+            <asp:Label ID="userCount" runat="server" Text="User Online"></asp:Label>
+        <br />
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                <asp:Timer runat="server" Interval="1000" ontick="Unnamed1_Tick">
+                </asp:Timer>
+                <span class="glyphicon glyphicon-time"></span><asp:Label ID="clock" runat="server" Text=""></asp:Label>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        <div class='content'>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        </div>
+    </div>
+   <footer class="footer">
+      <div class="container">
+        <p class="text-muted"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 0896 355 27273 <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Bluejack Toys World </p>
+      </div>
+    </footer>
+    </form>
+</body>
+</html>

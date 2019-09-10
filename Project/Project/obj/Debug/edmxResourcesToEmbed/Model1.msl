@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="projectCUPU1ModelStoreContainer" CdmEntityContainer="projectCUPU1Entities1">
+    <EntitySetMapping Name="comments">
+      <EntityTypeMapping TypeName="projectCUPU1Model.comment">
+        <MappingFragment StoreEntitySet="comment">
+          <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+          <ScalarProperty Name="PlaneID" ColumnName="PlaneID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="CommentBody" ColumnName="CommentBody" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="planes">
+      <EntityTypeMapping TypeName="projectCUPU1Model.plane">
+        <MappingFragment StoreEntitySet="plane">
+          <ScalarProperty Name="PlaneID" ColumnName="PlaneID" />
+          <ScalarProperty Name="PlaneName" ColumnName="PlaneName" />
+          <ScalarProperty Name="PlaneType" ColumnName="PlaneType" />
+          <ScalarProperty Name="EngineType" ColumnName="EngineType" />
+          <ScalarProperty Name="NumberOfEngine" ColumnName="NumberOfEngine" />
+          <ScalarProperty Name="PlaneImage" ColumnName="PlaneImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

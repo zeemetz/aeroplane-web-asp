@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="projectCUPU1Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="projectCUPU1ModelStoreContainer">
+    <EntitySet Name="comment" EntityType="projectCUPU1Model.Store.comment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="plane" EntityType="projectCUPU1Model.Store.plane" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__comment__PlaneID__0519C6AF" Association="projectCUPU1Model.Store.FK__comment__PlaneID__0519C6AF">
+      <End Role="plane" EntitySet="plane" />
+      <End Role="comment" EntitySet="comment" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="comment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PlaneID" Type="int" />
+    <Property Name="Username" Type="varchar" MaxLength="100" />
+    <Property Name="CommentBody" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="plane">
+    <Key>
+      <PropertyRef Name="PlaneID" />
+    </Key>
+    <Property Name="PlaneID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PlaneName" Type="varchar" MaxLength="50" />
+    <Property Name="PlaneType" Type="varchar" MaxLength="20" />
+    <Property Name="EngineType" Type="varchar" MaxLength="20" />
+    <Property Name="NumberOfEngine" Type="int" />
+    <Property Name="PlaneImage" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="FK__comment__PlaneID__0519C6AF">
+    <End Role="plane" Type="projectCUPU1Model.Store.plane" Multiplicity="0..1" />
+    <End Role="comment" Type="projectCUPU1Model.Store.comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plane">
+        <PropertyRef Name="PlaneID" />
+      </Principal>
+      <Dependent Role="comment">
+        <PropertyRef Name="PlaneID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
